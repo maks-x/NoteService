@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="ru"><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/><link rel="stylesheet" href="../jacoco-resources/report.css" type="text/css"/><link rel="shortcut icon" href="../jacoco-resources/report.gif" type="image/gif"/><title>main.kt</title><link rel="stylesheet" href="../jacoco-resources/prettify.css" type="text/css"/><script type="text/javascript" src="../jacoco-resources/prettify.js"></script></head><body onload="window['PR_TAB_WIDTH']=4;prettyPrint()"><div class="breadcrumb" id="breadcrumb"><span class="info"><a href="../jacoco-sessions.html" class="el_session">Sessions</a></span><a href="../index.html" class="el_report">NoteService</a> &gt; <a href="index.source.html" class="el_package">default</a> &gt; <span class="el_source">main.kt</span></div><h1>main.kt</h1><pre class="source lang-java linenums">import objects.*
+
+fun main() {
+<span class="nc" id="L4">    val ns = NoteService</span>
+
+<span class="nc" id="L6">    ns.add(&quot;First&quot;)</span>
+<span class="nc" id="L7">    ns.createComment(1)</span>
+<span class="nc" id="L8">    ns.createComment(1, &quot;message 2&quot;)</span>
+<span class="nc" id="L9">    ns.createComment(1, &quot;third message&quot;)</span>
+
+<span class="nc" id="L11">    ns.add(&quot;Second&quot;)</span>
+<span class="nc" id="L12">    ns.createComment(2, &quot;comment for second note&quot;)</span>
+<span class="nc" id="L13">    ns.createComment(1, &quot;fifth comment&quot;)</span>
+
+<span class="nc" id="L15">    ns.add(&quot;Third&quot;)</span>
+<span class="nc" id="L16">    ns.createComment(3, &quot;third note's comment&quot;)</span>
+
+<span class="nc" id="L18">    ns.add(&quot;fourth&quot;)</span>
+
+<span class="nc" id="L20">    printNotes()</span>
+<span class="nc" id="L21">    ns.delete(2)</span>
+<span class="nc" id="L22">    ns.edit(3, title = &quot;Edit note&quot;, text = &quot;Edited third note&quot;)</span>
+<span class="nc" id="L23">    ns.deleteComment(6)</span>
+<span class="nc" id="L24">    ns.deleteComment(6)</span>
+<span class="nc" id="L25">    ns.editComment(1, &quot;edited first comment&quot;)</span>
+<span class="nc" id="L26">    printNotes()</span>
+<span class="nc" id="L27">    ns.restoreComment(6)</span>
+<span class="nc" id="L28">    println(ns.getByID(3))</span>
+<span class="nc" id="L29">}</span>
+
+fun printNotes() {
+<span class="nc" id="L32">    val notes = NoteService.get()</span>
+<span class="nc bnc" id="L33" title="All 2 branches missed.">    for (note in notes) {</span>
+<span class="nc" id="L34">        println(note)</span>
+    }
+<span class="nc" id="L36">}</span>
+</pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.7.202105040129</span></div></body></html>
